@@ -12,7 +12,7 @@ class _DetailPage2Day15State extends State<DetailPage2Day15> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("DetailPage2"),
+        title: const Text("DetailPage2"),
       ),
     );
   }

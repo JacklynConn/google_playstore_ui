@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myfirst_project_flutter3/Styles/custom_text.dart';
+import 'package:myfirst_project_flutter3/page/playstore/custom_text.dart';
 import 'package:myfirst_project_flutter3/models/onboarding_medel.dart';
-import 'package:myfirst_project_flutter3/page/main_pages.dart';
+import 'package:myfirst_project_flutter3/page/playstore/main_pages.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 

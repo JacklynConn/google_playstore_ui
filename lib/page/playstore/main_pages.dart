@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myfirst_project_flutter3/page/layout_apps.dart';
+import 'package:myfirst_project_flutter3/page/playstore/layout_apps.dart';
 
+import '../other_screen.dart';
 import 'clone_playstore.dart';
 
 class MainPages extends StatefulWidget {
@@ -126,8 +127,10 @@ class _MainPagesState extends State<MainPages> {
                 index = valueIndex;
                 if (index == 0) {
                   _page_selected = const ClonePlayStore();
-                } else {
+                } else if (index == 1) {
                   _page_selected = const LayoutApps();
+                } else {
+                  _page_selected = const OtherScreen();
                 }
               });
             },
@@ -136,6 +139,8 @@ class _MainPagesState extends State<MainPages> {
                   icon: Icon(Icons.sports_esports_outlined), label: "Games"),
               NavigationDestination(
                   icon: Icon(Icons.grid_view_rounded), label: "Apps"),
+              NavigationDestination(
+                  icon: Icon(Icons.account_tree_outlined), label: "More"),
             ],
           ),
         ),

@@ -13,6 +13,7 @@ class _ClonePlayStoreState extends State<ClonePlayStore> {
   final screens = [
     const Center(child: Text('Games', style: TextStyle(fontSize: 72))),
     const Center(child: Text('Apps', style: TextStyle(fontSize: 72))),
+    const Center(child: Text('More', style: TextStyle(fontSize: 72))),
   ];
 
   @override
