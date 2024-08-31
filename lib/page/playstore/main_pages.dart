@@ -83,6 +83,10 @@ class _MainPagesState extends State<MainPages> {
             indicatorSize: TabBarIndicatorSize.label,
             indicatorPadding: EdgeInsets.only(right: 4, left: 4),
             isScrollable: true,
+            labelColor: Colors.white,
+            unselectedLabelColor: Colors.black,
+            dividerColor: Colors.transparent,
+            indicatorColor: Colors.white,
             tabs: [
               Tab(
                 text: "For You",

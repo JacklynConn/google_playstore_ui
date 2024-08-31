@@ -1,17 +1,24 @@
 import 'package:flutter/material.dart';
-import 'custom_apps.dart';
+import 'custom_gaming.dart';
 
-class LayoutApps extends StatefulWidget {
-  const LayoutApps({super.key});
+class ClonePlayStore extends StatefulWidget {
+  const ClonePlayStore({super.key});
 
   @override
-  State<LayoutApps> createState() => _LayoutAppsState();
+  State<ClonePlayStore> createState() => _ClonePlayStoreState();
 }
 
-class _LayoutAppsState extends State<LayoutApps> {
+class _ClonePlayStoreState extends State<ClonePlayStore> {
+  int index = 0;
+  final screens = [
+    const Center(child: Text('Games', style: TextStyle(fontSize: 72))),
+    const Center(child: Text('Apps', style: TextStyle(fontSize: 72))),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const Drawer(),
       body: ListView(
         shrinkWrap: true,
         physics: const BouncingScrollPhysics(),
@@ -25,58 +32,53 @@ class _LayoutAppsState extends State<LayoutApps> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Based on your recent activity",
+                        "Suggested for You",
                         style: TextStyle(
                             fontSize: 15, fontWeight: FontWeight.bold),
                       ),
-                      Icon(Icons.arrow_forward),
+                      Icon(Icons.more_vert),
                     ],
                   ),
                 ),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
-                  child: Column(
+                  child: Row(
                     children: [
-                      Row(
-                        children: [
-                          CustomApps(
-                            gamesName: "Tik Tok Lite",
-                            rolePlay: "Social • Network",
-                            rate: 4.3,
-                            logo:
-                                "https://play.seletronic.com.br/wp-content/uploads/sites/19/2020/12/tiktok-lite-icon.png",
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          CustomApps(
-                            gamesName: "Duolingo:",
-                            rolePlay: "language lessons",
-                            rate: 4.5,
-                            logo:
-                                "https://m.media-amazon.com/images/I/41cwNN2n2wL._AC_UL320_.png",
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          CustomApps(
-                            gamesName: "Food Panda:",
-                            rolePlay: "food & groceries",
-                            rate: 4.5,
-                            logo:
-                                "https://th.bing.com/th/id/OIP.NuqoylnYpxHMlhSleDylywAAAA?pid=ImgDet&rs=1",
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          CustomApps(
-                            gamesName: "KineMaster",
-                            rolePlay: "Video Editor",
-                            rate: 4.3,
-                            logo:
-                                "https://yt3.ggpht.com/-tULD4uhX9gA/AAAAAAAAAAI/AAAAAAAAAAA/x6WGq5d5kwA/s900-c-k-no/photo.jpg",
-                          ),
-                        ],
+                      CustomApps(
+                        gamesName: "SK Legends 2",
+                        rolePlay: "Role Play",
+                        size: 90,
+                        image:
+                            "https://th.bing.com/th/id/OIP.nhjLXD1jUHwrZ4fg6ATKAgHaFj?rs=1&pid=ImgDetMain",
+                        logo:
+                            "https://i.ytimg.com/vi/uYYWeyEde6k/maxresdefault.jpg",
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      CustomApps(
+                        gamesName: "hungry shark",
+                        rolePlay: "Action",
+                        size: 136,
+                        image:
+                            "https://th.bing.com/th/id/R.f0e59b7e13d2b83b4254bab42063a782?rik=vB%2bu3ZS9sB5PRA&riu=http%3a%2f%2fcdn02.nintendo-europe.com%2fmedia%2fimages%2f10_share_images%2fgames_15%2fnintendo_switch_download_software_1%2fH2x1_NSwitchDS_HungrySharkWorld_image1600w.jpg&ehk=fxiyU4%2bpzys6XZHN3RJ4gJqJiqBTi9F6mSahufenkB8%3d&risl=&pid=ImgRaw&r=0",
+                        logo:
+                            "https://i.ytimg.com/vi/mqzECudOkxw/maxresdefault.jpg",
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      CustomApps(
+                        gamesName: "SK Legends 2",
+                        rolePlay: "Role Play",
+                        size: 90,
+                        image:
+                            "https://sklegend.net/public/static/uploads/bg970home.jpg",
+                        logo:
+                            "https://i.ytimg.com/vi/uYYWeyEde6k/maxresdefault.jpg",
                       ),
                     ],
                   ),
@@ -87,7 +89,7 @@ class _LayoutAppsState extends State<LayoutApps> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Suggested for you",
+                        "Recommended for you",
                         style: TextStyle(
                             fontSize: 15, fontWeight: FontWeight.bold),
                       ),
@@ -100,21 +102,25 @@ class _LayoutAppsState extends State<LayoutApps> {
                   child: Row(
                     children: [
                       CustomApps(
-                        gamesName: "Grab-Taxi",
-                        rolePlay: "Food Delivery",
-                        rate: 4.8,
+                        gamesName: "Roblox",
+                        rolePlay: "Role Play",
+                        size: 90,
+                        image:
+                        "https://th.bing.com/th/id/OIP.1mrjfUbgCh7Kz-lTGYZpCgHaD4?rs=1&pid=ImgDetMain",
                         logo:
-                            "https://www.chatukchak.com/images/delivery/Grab-Food-01.png",
+                        "https://th.bing.com/th/id/R.0c215277a5b9286286656f65318057f8?rik=PCsWh9R8pS4h3w&pid=ImgRaw&r=0",
                       ),
                       SizedBox(
                         width: 5,
                       ),
                       CustomApps(
-                        gamesName: "PassApp",
-                        rolePlay: "Travel& Loacal",
-                        rate: 4.3,
+                        gamesName: "Mobile Legends",
+                        rolePlay: "Role Play",
+                        size: 90,
+                        image:
+                        "https://th.bing.com/th/id/OIP.oJwZxkhO2mKLgNLSh73IAwHaDn?rs=1&pid=ImgDetMain",
                         logo:
-                            "https://image.winudf.com/v2/image/Y29tLm11bHRpYnJhaW5zLnRheGkucGFzc2VuZ2VyLnBhc3NhcHB0YXhpc19pY29uXzE1MzgxODU2MjBfMDE1/icon.png?w=170&fakeurl=1&type=.png",
+                        "https://th.bing.com/th/id/OIF.BM5lHehRq6rVGd3jipWFfA?rs=1&pid=ImgDetMain",
                       ),
                       SizedBox(
                         width: 5,
@@ -122,7 +128,9 @@ class _LayoutAppsState extends State<LayoutApps> {
                       CustomApps(
                         gamesName: "SK Legends 2",
                         rolePlay: "Role Play",
-                        rate: 4.3,
+                        size: 90,
+                        image:
+                            "https://sklegend.net/public/static/uploads/bg970home.jpg",
                         logo:
                             "https://i.ytimg.com/vi/uYYWeyEde6k/maxresdefault.jpg",
                       ),
@@ -132,7 +140,9 @@ class _LayoutAppsState extends State<LayoutApps> {
                       CustomApps(
                         gamesName: "SK Legends 2",
                         rolePlay: "Role Play",
-                        rate: 4.3,
+                        size: 90,
+                        image:
+                            "https://sklegend.net/public/static/uploads/bg970home.jpg",
                         logo:
                             "https://i.ytimg.com/vi/uYYWeyEde6k/maxresdefault.jpg",
                       ),
@@ -142,7 +152,9 @@ class _LayoutAppsState extends State<LayoutApps> {
                       CustomApps(
                         gamesName: "SK Legends 2",
                         rolePlay: "Role Play",
-                        rate: 4.3,
+                        size: 90,
+                        image:
+                            "https://sklegend.net/public/static/uploads/bg970home.jpg",
                         logo:
                             "https://i.ytimg.com/vi/uYYWeyEde6k/maxresdefault.jpg",
                       ),
@@ -167,10 +179,40 @@ class _LayoutAppsState extends State<LayoutApps> {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
+
+                      SizedBox(
+                        width: 5,
+                      ),
+                      CustomApps(
+                        gamesName: "Clash of Clans",
+                        rolePlay: "Role Play",
+                        size: 90,
+                        image:
+                            "https://th.bing.com/th?id=OIF.uM9lCUpqAy%2fT%2bHdyRhW74A&rs=1&pid=ImgDetMain",
+                        logo:
+                            "https://th.bing.com/th/id/OIP.2LUauxMw2KIdOkB9a4nR6wHaHa?rs=1&pid=ImgDetMain",
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      CustomApps(
+                        gamesName: "Subway Surfers",
+                        rolePlay: "Role Play",
+                        size: 90,
+                        image:
+                            "https://th.bing.com/th/id/OIP.WvVhfdSaY6eNTBo2dQxJIAHaJ4?rs=1&pid=ImgDetMain",
+                        logo:
+                            "https://th.bing.com/th/id/OIP.gkzQAfsjPN5eGaUlUC1F4AAAAA?rs=1&pid=ImgDetMain",
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
                       CustomApps(
                         gamesName: "SK Legends 2",
                         rolePlay: "Role Play",
-                        rate: 4.3,
+                        size: 90,
+                        image:
+                            "https://sklegend.net/public/static/uploads/bg970home.jpg",
                         logo:
                             "https://i.ytimg.com/vi/uYYWeyEde6k/maxresdefault.jpg",
                       ),
@@ -180,37 +222,9 @@ class _LayoutAppsState extends State<LayoutApps> {
                       CustomApps(
                         gamesName: "SK Legends 2",
                         rolePlay: "Role Play",
-                        rate: 4.3,
-                        logo:
-                            "https://i.ytimg.com/vi/uYYWeyEde6k/maxresdefault.jpg",
-                      ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      CustomApps(
-                        gamesName: "SK Legends 2",
-                        rolePlay: "Role Play",
-                        rate: 4.3,
-                        logo:
-                            "https://i.ytimg.com/vi/uYYWeyEde6k/maxresdefault.jpg",
-                      ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      CustomApps(
-                        gamesName: "SK Legends 2",
-                        rolePlay: "Role Play",
-                        rate: 4.3,
-                        logo:
-                            "https://i.ytimg.com/vi/uYYWeyEde6k/maxresdefault.jpg",
-                      ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      CustomApps(
-                        gamesName: "SK Legends 2",
-                        rolePlay: "Role Play",
-                        rate: 4.3,
+                        size: 90,
+                        image:
+                            "https://sklegend.net/public/static/uploads/bg970home.jpg",
                         logo:
                             "https://i.ytimg.com/vi/uYYWeyEde6k/maxresdefault.jpg",
                       ),
